@@ -18,10 +18,10 @@ const Index = () => {
   const [regionDialogOpen, setRegionDialogOpen] = useState(false);
   const [sessionDialogOpen, setSessionDialogOpen] = useState(false);
   const [settingsDialogOpen, setSettingsDialogOpen] = useState(false);
-  const [stOverlayEnabled, setStOverlayEnabled] = useState(false);
+  const [stOverlayEnabled, setStOverlayEnabled] = useState(true);
   const [selectedGenes, setSelectedGenes] = useState<string[]>([]);
   const [analysisRunning, setAnalysisRunning] = useState(false);
-  const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const [showAdminPanel, setShowAdminPanel] = useState(true);
 
   const { currentWSI, loadWSI, clearWSI } = useWSI();
   const { annotations, addAnnotation, loadAnnotations } = useAnnotations(currentWSI?.id);
