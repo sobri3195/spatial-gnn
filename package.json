@@ -8,7 +8,10 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup": "npm install && echo '\n✅ Setup complete! Run: npm run dev'",
+    "deploy": "npm run build && echo '\n✅ Build complete! Ready to deploy to Netlify'",
+    "clean": "rm -rf node_modules dist && echo '\n✅ Cleaned! Run: npm install'"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

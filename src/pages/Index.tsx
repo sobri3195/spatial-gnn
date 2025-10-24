@@ -7,6 +7,7 @@ import { UploadDialog } from "@/components/UploadDialog";
 import { RegionSelector } from "@/components/RegionSelector";
 import { SessionDialog } from "@/components/SessionDialog";
 import { SettingsDialog } from "@/components/SettingsDialog";
+import { ConfigStatus } from "@/components/ConfigStatus";
 import { useWSI } from "@/hooks/useWSI";
 import { useAnnotations } from "@/hooks/useAnnotations";
 import { useSession } from "@/hooks/useSession";
@@ -132,13 +133,18 @@ const Index = () => {
       {/* Main Content */}
       <div className="flex-1 flex">
         {/* Canvas Area */}
-        <div className="flex-1">
-          <CanvasViewer 
-            currentWSI={currentWSI}
-            annotations={annotations}
-            showSTOverlay={stOverlayEnabled}
-            onLoadWSI={() => setUploadDialogOpen(true)}
-          />
+        <div className="flex-1 flex flex-col">
+          <div className="p-4">
+            <ConfigStatus />
+          </div>
+          <div className="flex-1">
+            <CanvasViewer 
+              currentWSI={currentWSI}
+              annotations={annotations}
+              showSTOverlay={stOverlayEnabled}
+              onLoadWSI={() => setUploadDialogOpen(true)}
+            />
+          </div>
         </div>
 
         {/* Right Panel - Gene Query */}

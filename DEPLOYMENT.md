@@ -2,6 +2,8 @@
 
 This project has been configured to work seamlessly with Netlify.
 
+⚠️ **Important**: For detailed step-by-step deployment instructions, see [NETLIFY_SETUP.md](./NETLIFY_SETUP.md)
+
 ## Changes Made
 
 ### 1. New Favicon
