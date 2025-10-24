@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase, isSupabaseConfigured } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 export interface WSIData {
@@ -21,6 +21,28 @@ export const useWSI = () => {
   const loadWSI = async (file: File) => {
     setLoading(true);
     try {
+      if (!isSupabaseConfigured) {
+        toast.warning("Running in demo mode - data will not persist");
+        // Create demo WSI for local testing
+        const demoData: WSIData = {
+          id: crypto.randomUUID(),
+          filename: file.name,
+          resolution_x: 20000,
+          resolution_y: 15000,
+          tissue_type: "breast",
+          file_size_mb: file.size / (1024 * 1024),
+          upload_date: new Date().toISOString(),
+          metadata: {
+            original_size: file.size,
+            format: file.name.split('.').pop(),
+            demo_mode: true
+          }
+        };
+        setCurrentWSI(demoData);
+        toast.success(`WSI loaded (demo): ${file.name}`);
+        return demoData;
+      }
+
       // Simulate processing
       const resolution = { x: 20000, y: 15000 };
       

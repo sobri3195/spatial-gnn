@@ -1,0 +1,24 @@
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  ✅  PathoST-GNN Build Configuration                   │
+│                                                         │
+│  Build Command: npm run build                          │
+│  Output Directory: dist/                               │
+│  Node Version: 20                                      │
+│                                                         │
+│  ⚠️  IMPORTANT: Set Environment Variables              │
+│                                                         │
+│  Required in Netlify Dashboard:                        │
+│  • VITE_SUPABASE_URL                                   │
+│  • VITE_SUPABASE_PUBLISHABLE_KEY                       │
+│                                                         │
+│  Get these from:                                       │
+│  https://supabase.com/dashboard                        │
+│  → Project Settings → API                              │
+│                                                         │
+│  📖 Documentation:                                     │
+│  • NETLIFY_SETUP.md - Full deployment guide            │
+│  • DEPLOYMENT_CHECKLIST.md - Verification steps        │
+│  • QUICKSTART.md - Quick start guide                   │
+│                                                         │
+└─────────────────────────────────────────────────────────┘

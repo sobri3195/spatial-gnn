@@ -209,6 +209,17 @@
 
 ### Installation
 
+**Quick Setup (Recommended):**
+```bash
+# Clone the repository
+git clone <YOUR_GIT_URL>
+cd <YOUR_PROJECT_NAME>
+
+# Run setup script
+./setup.sh
+```
+
+**Manual Setup:**
 1. **Clone the repository**
 ```bash
 git clone <YOUR_GIT_URL>
@@ -220,15 +231,23 @@ cd <YOUR_PROJECT_NAME>
 npm install
 ```
 
-3. **Start development server**
+3. **Configure environment (optional)**
+```bash
+cp .env.example .env
+# Edit .env and add your Supabase credentials
+```
+
+4. **Start development server**
 ```bash
 npm run dev
 ```
 
-4. **Open in browser**
+5. **Open in browser**
 ```
-http://localhost:5173
+http://localhost:8080
 ```
+
+> 💡 **Tip**: The app works in demo mode without Supabase configuration!
 
 ### Quick Start Guide
 
@@ -442,18 +461,42 @@ const { data, error } = await supabase
 
 ## 🚀 Deployment
 
-### Deploy to Lovable Cloud
+### Deploy to Netlify
 
-1. Click "Publish" button in Lovable editor
-2. Your app is automatically deployed
-3. Access at: `https://your-project.lovable.app`
+This project is configured for seamless Netlify deployment.
+
+**Quick Deploy:**
+1. Push code to GitHub/GitLab/Bitbucket
+2. Connect repository to Netlify
+3. Set environment variables (see below)
+4. Deploy automatically
+
+**Detailed Guides:**
+- 📖 [NETLIFY_SETUP.md](./NETLIFY_SETUP.md) - Complete deployment guide
+- 📋 [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md) - Step-by-step checklist
+- 📄 [DEPLOYMENT.md](./DEPLOYMENT.md) - Configuration details
+
+**Required Environment Variables:**
+```bash
+VITE_SUPABASE_URL=https://xxxxxxxxxxxxx.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=eyJxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+**Live Demo:** [https://spasial.netlify.app](https://spasial.netlify.app)
+
+### Deploy to Other Platforms
+
+The project also works with:
+- **Vercel**: Update build command to `npm run build`
+- **Cloudflare Pages**: Same configuration as Netlify
+- **AWS Amplify**: Use the provided `netlify.toml` as reference
 
 ### Custom Domain
 
-1. Go to Project > Settings > Domains
-2. Click "Connect Domain"
+1. Go to Netlify Dashboard > Domain settings
+2. Click "Add custom domain"
 3. Follow DNS configuration steps
-4. Domain will be active within 24 hours
+4. SSL certificate auto-provisioned
 
 ---
 
