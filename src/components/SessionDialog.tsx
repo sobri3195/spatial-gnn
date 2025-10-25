@@ -25,7 +25,8 @@ export const SessionDialog = ({ open, onOpenChange, onSave }: SessionDialogProps
   useEffect(() => {
     if (open) {
       // Generate default name with timestamp
-      const defaultName = `Analysis_${new Date().toISOString().split('T')[0]}_${Date.now().toString().slice(-4)}`;
+      const today = new Date().toLocaleDateString('id-ID', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
+      const defaultName = `Analisis_${today}_${Date.now().toString().slice(-4)}`;
       setSessionName(defaultName);
       setError("");
     }

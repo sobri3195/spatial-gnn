@@ -72,9 +72,16 @@ export const useSession = () => {
 
   const exportReport = async (sessionData: any) => {
     try {
+      const now = new Date();
       const report = {
-        session_name: sessionData.sessionName || "Analysis Report",
-        timestamp: new Date().toISOString(),
+        session_name: sessionData.sessionName || "Laporan Analisis",
+        timestamp: now.toISOString(),
+        tanggal: now.toLocaleDateString('id-ID', { 
+          weekday: 'long',
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        }),
         wsi_info: sessionData.wsi,
         selected_genes: sessionData.genes,
         results: sessionData.results,
@@ -87,7 +94,8 @@ export const useSession = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `pathostgnn_report_${Date.now()}.json`;
+      const today = now.toLocaleDateString('id-ID', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
+      a.download = `laporan_pathostgnn_${today}.json`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

@@ -34,7 +34,8 @@ export const AnalysisResults = ({ expressionData, onExport }: AnalysisResultsPro
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `analysis_results_${new Date().toISOString().split('T')[0]}.csv`;
+    const today = new Date().toLocaleDateString('id-ID', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
+    a.download = `hasil_analisis_${today}.csv`;
     a.click();
     URL.revokeObjectURL(url);
     toast.success("Analysis results exported");
