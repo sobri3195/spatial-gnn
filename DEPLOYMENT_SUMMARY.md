@@ -276,7 +276,7 @@ npm run dev
 - [ ] Configure Netlify env vars
 - [ ] Deploy to https://spasial.netlify.app
 
-**Last Updated:** $(date +"%Y-%m-%d %H:%M:%S")
+**Last Updated:** 2024-10-25
 
 ---
 

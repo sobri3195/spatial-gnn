@@ -216,6 +216,6 @@ Your site should be live at: `https://your-site-name.netlify.app`
 
 ---
 
-**Last Updated:** $(date)
+**Last Updated:** October 25, 2024
 
 **Happy deploying! 🎉**
