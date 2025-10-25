@@ -372,7 +372,11 @@ export const AdminPanel = () => {
                           <Badge variant="outline">{session.status}</Badge>
                         </TableCell>
                         <TableCell className="text-sm">
-                          {new Date(session.created_at).toLocaleDateString()}
+                          {new Date(session.created_at).toLocaleDateString('id-ID', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
                         </TableCell>
                         <TableCell className="text-right">
                           <Button

@@ -72,7 +72,7 @@ const Index = () => {
           wsi: currentWSI,
           genes: selectedGenes,
           annotations,
-          sessionName: `Analysis_${new Date().toISOString().split('T')[0]}`,
+          sessionName: `Analisis_${new Date().toLocaleDateString('id-ID', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-')}`,
         });
         break;
       case "settings":
