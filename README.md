@@ -7,6 +7,10 @@
 
 **PathoST-GNN** is a comprehensive web-based platform for analyzing Whole Slide Images (WSI) with integrated spatial transcriptomics (ST) data. Built for pathologists, researchers, and bioinformaticians to explore gene expression patterns in tissue samples.
 
+## 🌐 Live Demo
+
+**Try it now:** [https://spatial-insight-gnn.lovable.app](https://spatial-insight-gnn.lovable.app)
+
 ---
 
 ## 🚀 Features
@@ -482,7 +486,7 @@ VITE_SUPABASE_URL=https://xxxxxxxxxxxxx.supabase.co
 VITE_SUPABASE_PUBLISHABLE_KEY=eyJxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-**Live Demo:** [https://spasial.netlify.app](https://spasial.netlify.app)
+**Live Demo:** [https://spatial-insight-gnn.lovable.app](https://spatial-insight-gnn.lovable.app)
 
 ### Deploy to Other Platforms
 
